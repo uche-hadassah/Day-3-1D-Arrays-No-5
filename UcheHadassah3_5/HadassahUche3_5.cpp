@@ -20,6 +20,24 @@ int main()
 	const int MAX = 100;
 	int Initial[MAX];
 	int Reversed[MAX];
-
+	int i = 0;
+	cout << "Enter a sequence of positive integers(-1 to end):" << endl;
+	do//Reads the numbers intoo the array
+	{
+		cin >> Initial[i];
+		if (Initial[i] < -1)
+		{
+			cout << "Invalid input. Please Enter a POSITIVE number:";
+			cin >> Initial[i];
+		}
+		else if (Initial[i] == -1)
+		{
+			break;
+		}
+		else
+		{
+			i++;
+		}
+	} while (Initial[i] != -1 && Initial[i] < MAX);
 	return 0;
 }
