@@ -21,16 +21,17 @@ int main()
 	int Initial[MAX];
 	int Reversed[MAX];
 	int i = 0;
+	int j = 0;
 	cout << "Enter a sequence of positive integers(-1 to end):" << endl;
 	do//Reads the numbers into the array
 	{
 		cin >> Initial[i];
-		if (Initial[i] < -1)
+		if (Initial[i] < -1)//makes sure the user doesnt enter a negative number
 		{
 			cout << "Invalid input. Please Enter a POSITIVE number:";
 			cin >> Initial[i];
 		}
-		else if (Initial[i] == -1)
+		else if (Initial[i] == -1)//Activates the sentinel
 		{
 			break;
 		}
@@ -39,13 +40,22 @@ int main()
 			i++;
 		}
 	} while (Initial[i] != -1 && Initial[i] < MAX);
-	int j = 0;
-	do
+	for (int k = i - 1; j < i; j++)//Reverses the loop
 	{
-		Reversed[j] = Initial[i - 1];
-		j++;
-		i--;
-	} while (i != 0);
-	
+		Reversed[j] = Initial[k];
+		k--;
+	}
+	cout << "You have entered " << i << " integers." << endl;
+	cout << "Initial array:";
+	for (int a = 0; a < i; a++)//outputs the initial array
+	{
+		cout << Initial[a] << " ";
+	}
+	cout << endl;
+	cout << "Reversed Array:";
+	for (int b = 0; b < i; b++)//outputs the copied array
+	{
+		cout << Reversed[b] << " ";
+	}
 	return 0;
 }
