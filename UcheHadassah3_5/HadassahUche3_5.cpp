@@ -22,7 +22,7 @@ int main()
 	int Reversed[MAX];
 	int i = 0;
 	cout << "Enter a sequence of positive integers(-1 to end):" << endl;
-	do//Reads the numbers intoo the array
+	do//Reads the numbers into the array
 	{
 		cin >> Initial[i];
 		if (Initial[i] < -1)
@@ -39,5 +39,13 @@ int main()
 			i++;
 		}
 	} while (Initial[i] != -1 && Initial[i] < MAX);
+	int j = 0;
+	do
+	{
+		Reversed[j] = Initial[i - 1];
+		j++;
+		i--;
+	} while (i != 0);
+	
 	return 0;
 }
